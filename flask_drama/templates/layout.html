@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あなたにおすすめのドラマ　ドラマのレビューを閲覧・投稿</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='jquery.raty.js') }}"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="header-left">
+          <a id="top" href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='logo.png') }}">
+          </a>
+        </div>
+        <div class="clear"></div>
+        <div id="header-right">
+          {% if not session.logged_in %}
+            <a id="new" href="{{ url_for('new') }}">新規登録</a>
+            <a id="login" href="{{ url_for('login') }}">ログイン</a>
+          {% else %}
+            {% if session.admin_name %}
+              <a id= "admin" href="{{ url_for('admin') }}">管理者ページ</a>
+            {% endif %}
+            <a id="logout" href="{{ url_for('logout') }}">ログアウト</a>
+          {% endif %}
+        </div>
+        <div class="clear"></div>
+      </div>
+    </header>
+    <div id="main">
+      <div id="title">
+        <h1>あなたにおすすめのドラマ</h1>
+      </div>
+      {% for message in get_flashed_messages() %}
+      <div id="alert">
+        <p>{{ message }}</p>
+      </div>
+      {% endfor %}
+      <div class="container">
+        {% block body %}{% endblock %}
+      </div>
+      <div class="clear"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

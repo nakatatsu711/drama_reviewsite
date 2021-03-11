@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div id="index-title">
+  <h2>ドラマの一覧</h2>
+</div>
+  {% for drama in dramas %}
+    <div class="drama-index">
+      <a href="{{ url_for('posts_detail', id=drama.id) }}">
+        <ul>
+          <li>
+            {{ drama.title }}
+          </li>
+        </ul>
+      </a>
+    </div>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,27 @@
+@media (max-width: 1000px) {
+  #reviews {
+    width: 100%;
+  }
+
+  #main-right {
+    display: none;
+  }
+
+  .drama-index {
+    width: 50%;
+  }
+
+  #form-group {
+    width: 100%;
+  }
+}
+
+@media (max-width: 670px) {
+  .drama-title p {
+    display: none;
+  }
+
+  .drama-index {
+    width: 100%;
+  }
+}

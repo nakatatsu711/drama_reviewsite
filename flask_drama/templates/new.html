@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div id="form">
+  <div id="form-title">
+    <h2>新規登録</h2>
+  </div>
+  <div id="form-group">
+    <form action="{{ url_for('new') }}" method=post>
+      <label for="username">ユーザー名</label><br>
+      {% if user.username %}
+        <input id="username" type="text" name="username" value="{{ user.username }}"><br>
+      {% else %}
+        <input id="username" type="text" name="username" value=""><br>
+      {% endif %}
+      <label for="password">パスワード</label><br>
+      {% if user.password %}
+        <input id="password" type="password" name="password" value="{{ user.password }}"><br>
+      {% else %}
+        <input id="password" type="password" name="password" value=""><br>
+      {% endif %}
+      <input id="btn" type="submit" value="新規登録">
+    </form>
+  </div>
+</div>
+{% endblock %}

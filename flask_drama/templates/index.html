@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div id="reviews">
+  <h2>おすすめのドラマ</h2>
+  {% for drama in dramas %}
+    {% if loop.index > 5 %}
+    {% else %}
+      <div class="review">
+        <div class="drama-title">
+          <h3>{{ drama.title }}</h3>
+          <p>出演：{{ drama.actor }}</p>
+          <p>視聴率：{{ drama.rate }}％</p>
+          <div class="stars-review">
+            {% if drama.mean %}
+              <p class="stars" data-score="{{ drama.mean }}"></p>
+              <div class="stars-value">
+                <p>{{ drama.mean }}</p>
+              </div>
+            {% endif %}
+            <a class="all detail-all" href="{{ url_for('posts_detail', id=drama.id) }}"><i class="fab fa-sistrix"></i><span>ドラマの詳細ページへ</span></a>
+          </div>
+        </div>
+        <div class="drama-contents">
+          {% if drama.posts[0] %}
+            {% for post in drama.posts[::-1] %}
+              {% if loop.index > 3 %}
+              {% else %}
+                <div class="drama-content">
+                  <p class="stars" data-score="{{ post.star }}"></p>
+                  <p>{{ post.review }}</p>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <div class="review-nothing">
+              <p>投稿はありません</p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+<div id="main-right">
+  <div id="review-ranking">
+    <h3>ドラマレビューランキングTOP10</h3>
+    <div id="review-ranking-list">
+      <ol>
+        {% for review_ranking in review_rankings %}
+          {% if loop.index > 10 %}
+          {% else %}
+            {% if review_ranking.mean %}
+              <li>{{ review_ranking.title }}<span id="review-value">{{ review_ranking.mean }}</span></li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
+      <a class="all" href="{{ url_for('posts_index') }}"><i class="fas fa-list"></i><span>ドラマの一覧ページへ</span></a>
+    </div>
+  </div>
+  <div id="rate-ranking">
+    <h3>視聴率ランキングTOP10</h3>
+    <div id="rate-ranking-list">
+      <ol>
+        {% for rate_ranking in rate_rankings %}
+          {% if loop.index > 10 %}
+          {% else %}
+            <li>{{ rate_ranking.title }}<span id="review-value">{{ rate_ranking.rate }}％</span></li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</div>
+{% endblock %}

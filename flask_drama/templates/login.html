@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div id="form">
+  <div id="form-title">
+    <h2>ログイン</h2>
+  </div>
+  <div id="form-group">
+    <form action="{{ url_for('login') }}" method=post>
+      <label for="username">ユーザー名</label><br>
+      <input id="username" type="text" name="username" value="{{ username }}"><br>
+      <label for="password">パスワード</label><br>
+      <input id="password" type="password" name="password" value="{{ password }}"><br>
+      <input id="btn" type="submit" value="ログイン">
+    </form>
+  </div>
+</div>
+{% endblock %}

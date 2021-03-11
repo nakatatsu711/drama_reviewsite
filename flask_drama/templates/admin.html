@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div id="form">
+  <div id="form-title">
+    <h2>管理者ページ</h2>
+  </div>
+  <div id="form-group">
+    <form action="{{ url_for('admin') }}" method=post>
+      <label for="admin-title">ドラマのタイトル</label><br>
+      {% if drama.title %}
+        <input id="admin-title" type="text" name="admin-title" value="{{ drama.title }}"><br>
+      {% else %}
+        <input id="admin-title" type="text" name="admin-title" value=""><br>
+      {% endif %}
+      <label for="actor">出演者</label><br>
+      {% if drama.actor %}
+        <input id="actor" type="text" name="actor" value="{{ drama.actor }}"><br>
+      {% else %}
+        <input id="actor" type="text" name="actor" value=""><br>
+      {% endif %}
+      <label for="rate">視聴率</label><br>
+      {% if drama.rate %}
+        <input id="rate" type="text" name="rate" value="{{ drama.rate }}"><br>
+      {% else %}
+        <input id="rate" type="text" name="rate" value=""><br>
+      {% endif %}
+      <input id="btn" type="submit" value="ドラマを追加">
+    </form>
+  </div>
+</div>
+{% endblock %}

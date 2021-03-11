@@ -1,0 +1,298 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+span {
+  margin-left: 5px;
+}
+
+#alert {
+  color: #ff0000;
+  padding-left: 20px;
+  text-align: center;
+}
+
+header {
+  border-bottom: solid 1px #c0c0c0;
+  box-shadow: 0 2px 4px #c0c0c0;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+  background-color: #ffffff;
+}
+
+.clear {
+  clear: left;
+  clear: right;
+}
+
+#header-left img {
+  float: left;
+  height: 40px;
+  margin-top: 10px;
+}
+
+#header-right {
+  float: right;
+}
+
+#header-right a {
+  display: inline-block;
+  line-height: 60px;
+  transition: all 0.5s;
+  padding: 0 10px;
+}
+
+#header-right a, #header-right a:visited {
+  color: #000000;
+}
+
+#header-right a:hover {
+  background-color: rgba(192, 192, 192, 0.2);
+}
+
+#new, #login, #admin, #logout {
+  margin: 0 10px;
+}
+
+#main {
+  padding: 100px 0 20px 0;
+}
+
+#title {
+  padding-bottom: 20px;
+  text-align: center;
+  text-shadow: 4px 4px 1px #c0c0c0;
+}
+
+#reviews {
+  float: left;
+  width: 70%;
+}
+
+#reviews h2 {
+  padding-bottom: 20px;
+}
+
+.review {
+  border: solid 1px #c0c0c0;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 3px #c0c0c0;
+}
+
+.drama-title h3 {
+  display: inline;
+}
+
+.drama-title p {
+  margin-left: 10px;
+  color: #6b6b6b;
+  display: inline;
+}
+
+.drama-title {
+  height: 70px;
+  margin-bottom: 20px;
+  border-bottom: solid 1px #c0c0c0;
+}
+
+.drama-content {
+  padding-bottom: 20px;
+}
+
+#main-right {
+  float: right;
+  width: 30%;
+}
+
+#main-right h3 {
+  border-bottom: solid 1px #c0c0c0;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #6b6b6b;
+}
+
+#review-ranking, #rate-ranking {
+  border: solid 1px #f5f5f5;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  margin-left: 20px;
+  box-shadow: 0 0 3px #c0c0c0;
+}
+
+#review-ranking {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+#review-ranking-list ol {
+  padding-bottom: 10px;
+}
+
+#review-value {
+  margin-left: 15px;
+  color: #6b6b6b;
+}
+
+.all {
+  display: inline-block;
+  color: #4387e9;
+}
+
+.all:visited {
+  color: #4387e9;
+}
+
+.all:hover {
+  text-decoration: underline;
+}
+
+#form-title {
+  color: #6b6b6b;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#form-group {
+  border: solid 1px #c0c0c0;
+  padding: 20px;
+  width: 40%;
+  margin: 0 auto;
+  box-shadow: 0 0 3px #c0c0c0;
+  border-radius: 5px;
+}
+
+label {
+  font-size: 20px;
+}
+
+#username, #password, #admin-title, #actor, #rate {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border: solid 1px #c0c0c0;
+}
+
+select {
+  -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+  width: 100%;
+  height: 35px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border: solid 1px #c0c0c0;
+  border-radius: 0;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+textarea {
+  border: solid 1px #c0c0c0
+}
+
+#review-input {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  resize: none;
+}
+
+#btn {
+  color: #ffffff;
+  background-color: #4387e9;
+  padding: 5px 10px;
+  opacity: 1;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+#btn:hover {
+  opacity: 0.8;
+}
+
+#index-title {
+  padding-bottom: 20px;
+}
+
+.drama-index {
+  width: 25%;
+  height: 50px;
+  float: left;
+}
+
+.drama-index ul li {
+  list-style-type: none;
+}
+
+.drama-index a {
+  color: #000000;
+  font-size: 18px;
+}
+
+.drama-index a:visited {
+  color: #000000;
+}
+
+.drama-index a:hover {
+  text-decoration: underline;
+}
+
+.stars-review {
+  height: 40px;
+  line-height: 40px;
+}
+
+.stars-value {
+  display: inline;
+}
+
+.stars-value p {
+  font-size: 20px;
+  color: #000000;
+}
+
+.detail-all {
+  float: right;
+}
+
+#drama-img {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#delete, #delete:visited {
+  color: #4387e9;
+}
+
+#delete:hover {
+  text-decoration: underline;
+}
+
+#update p, #update p:visited {
+  color: #4387e9;
+}
+
+#update p:hover {
+  text-decoration: underline;
+}

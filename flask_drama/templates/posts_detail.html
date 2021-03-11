@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div id="detail">
+  <div id="drama-img">
+    <img src="../static/{{ drama.title }}.jpg">
+  </div>
+  <div class="drama-title">
+    <h3>{{ drama.title }}</h3>
+    <p>出演：{{ drama.actor }}</p>
+    {% if session.admin_name %}
+      <a id="update" href="{{ url_for('update', id=drama.id) }}"><p>視聴率：{{ drama.rate }}％</p></a>
+    {% else %}
+      <p>視聴率：{{ drama.rate }}％</p>
+    {% endif %}
+    <div class="stars-review">
+      {% if drama.mean %}
+        <p class="stars" data-score="{{ drama.mean }}"></p>
+        <div class="stars-value">
+          <p>{{ drama.mean }}</p>
+        </div>
+      {% endif %}
+      <a class="all detail-all" href="{{ url_for('posts_index') }}"><i class="fas fa-list"></i><span>ドラマの一覧ページへ</span></a>
+    </div>
+  </div>
+  <div class="drama-contents">
+    {% if drama.posts[0] %}
+      {% for post in drama.posts[::-1] %}
+        <div class="drama-content">
+          <p class="stars" data-score="{{ post.star }}"></p>
+          <p>{{ post.review }}</p>
+          {% if session.admin_name %}
+            <a id="delete" href="{{ url_for('delete', id=post.id) }}"><i class="far fa-trash-alt"></i><span>削除</span></a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="review-nothing">
+        <p>投稿はありません</p>
+      </div>
+    {% endif %}
+  </div>
+  {% if session.logged_in %}
+    <div id="form">
+      <div id="form-title">
+        <h2>新規投稿</h2>
+      </div>
+      <div id="form-group">
+        <form action="{{ url_for('posts_detail', id=drama.id) }}" method=post>
+          <label for="star">評価</label><br>
+          <select id="star" name="star">
+            <option value="" {% if not post.star %}selected{% endif %}>選択してください</option>
+            <option value="1" {% if post.star == '1' %}selected{% endif %}>星１つ</option>
+            <option value="2" {% if post.star == '2' %}selected{% endif %}>星２つ</option>
+            <option value="3" {% if post.star == '3' %}selected{% endif %}>星３つ</option>
+            <option value="4" {% if post.star == '4' %}selected{% endif %}>星４つ</option>
+            <option value="5" {% if post.star == '5' %}selected{% endif %}>星５つ</option>
+          </select>
+          <label for="review-input">レビュー</label><br>
+          {% if post.review %}
+            <textarea id="review-input" name="review-input" value="{{ post.review }}"></textarea><br>
+          {% else %}
+            <textarea id="review-input" name="review-input" value=""></textarea><br>
+          {% endif %}
+          <input id="btn" type="submit" value="新規投稿">
+        </form>
+      </div>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}
