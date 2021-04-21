@@ -87,7 +87,7 @@ $ python server.py
 
 ### サイトのロゴを決める
 ヘッダーにあるサイトのロゴは以下のサイトで作成しました。  
-[http://ja.flamingtext.com](http://ja.flamingtext.com)
+http://ja.flamingtext.com
 
 ロゴは`static`ディレクトリ内に`logo.png`というファイル名で追加してください。  
 GitHubには事前にサンプルのロゴをアップロードしてあります。
@@ -114,4 +114,4 @@ GitHubには事前にサンプルのサムネイルをアップロードして�
 ドラマの詳細ページからドラマのレビューを投稿します。
 
 レビューは以下のサイトを参考に追加しました。  
-[https://www.ch-review.net/](https://www.ch-review.net/)
+https://www.ch-review.net/
