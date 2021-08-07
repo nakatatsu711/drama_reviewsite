@@ -120,10 +120,13 @@ https://www.ch-review.net/
 
 ## ページ例
 トップページ
-![drama-reviewsite-1](https://user-images.githubusercontent.com/62325937/128609940-a7cbb2cf-ccbf-4c29-b098-efeafe82c611.jpg)
+
+<img width="300" alt="drama-reviewsite-1" src="https://user-images.githubusercontent.com/62325937/128610698-384dcf2e-6d48-42aa-a561-472ae25e5d6d.jpg">
 
 一覧ページ
-![drama-reviewsite-2](https://user-images.githubusercontent.com/62325937/128609944-e0effb8e-b7c4-445d-ab5c-949e2907fbcf.jpg)
+
+<img width="300" alt="drama-reviewsite-2" src="https://user-images.githubusercontent.com/62325937/128610702-5b31a335-1748-4784-bbfb-2b4dbac6e2e2.jpg">
 
 詳細ページ
-![drama-reviewsite-3](https://user-images.githubusercontent.com/62325937/128609947-580ef0f9-f60a-44f7-add1-3980d9250560.jpg)
+
+<img width="300" alt="drama-reviewsite-3" src="https://user-images.githubusercontent.com/62325937/128610707-6906c3ae-9d40-4ae8-9d29-2610f302b220.jpg">
