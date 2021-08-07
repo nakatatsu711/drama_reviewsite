@@ -34,7 +34,7 @@ $ pip install pipenv
 ### Pipenvでの開発環境構築
 以下の2通りの方法がありますので、どちらかで構築してください。
 
-- 個別にインストール
+#### 個別にインストール
 ```
 $ cd drama_reviewsite
 $ pipenv --python 3.6.9
@@ -43,7 +43,7 @@ $ pipenv install Flask-SQLAlchemy
 $ pipenv install Flask-Script
 ```
 
-- Pipfileを使ったインストール
+#### Pipfileを使ったインストール
 ```
 $ cd drama_reviewsite
 $ pipenv install
